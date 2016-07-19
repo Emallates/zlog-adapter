@@ -1,0 +1,35 @@
+{
+  "name": "zlog-adapter",
+  "version": "0.0.2",
+  "description": "log http request, response, and get the logged messages",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emallates/zlog-adapter.git"
+  },
+  "keywords": [
+    "zglog",
+    "zlog",
+    "logger",
+    "analytics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Emallates/zlog-adapter/issues"
+  },
+  "homepage": "https://github.com/Emallates/zlog-adapter#readme",
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "should": "^8.3.1",
+    "type-util": "*"
+  },
+  "dependencies": {
+    "enoa-client": "0.0.5",
+    "on-headers": "^1.0.1",
+    "type-util": "*"
+  }
+}
