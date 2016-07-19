@@ -57,7 +57,7 @@ zlog-adapter can be used with enoa-client, for more information on how to use en
 ##### Example
 
 ```javascript
-var adapter = { 
+var zlog = { 
    collections:{
      adapter:{
        appId:'app_id',
@@ -68,12 +68,12 @@ var adapter = {
      }
    }
 };
-var client = require('enoa-client')(adapter);
+var client = require('enoa-client')(zlog);
 //client is initialized now
 ```
 ##### SKIP API EXAMPLE
 ```javascript
-var adapter = { 
+var zlog = { 
    collections:{
      adapter:{
        appId:'app_id',
@@ -90,12 +90,12 @@ var adapter = {
      }
    }
 }
-var client = require('enoa-client')(adapter);
+var client = require('enoa-client')(zlog);
 //client is initialized now
 ```
 ##### GLOBAL SKIP EXAMPLE
 ```javascript
-var adapter = { 
+var zlog = { 
    collections:{
      adapter:{
        appId:'app_id',
@@ -107,12 +107,12 @@ var adapter = {
      }
    }
 };
-var client = require('enoa-client')(adapter);
+var client = require('enoa-client')(zlog);
 //client is initialized now
 ```
 ##### TAGS EXAMPLE
 ```javascript
-var adapter = { 
+var zlog = { 
    collections:{
      adapter:{
        appId:'app_id',
@@ -130,7 +130,7 @@ var adapter = {
      }
    }
 }
-var client = require('enoa-client')(adapter);
+var client = require('enoa-client')(zlog);
 //client is initialized now
 ```
 ## Overview
