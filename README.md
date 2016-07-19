@@ -63,7 +63,7 @@ var zlog = {
        appId:'app_id',
        apiKey:'api_key',
        adapter:require('zlog-adapter'), 
-       ip:'host', port:'port' ,
+       host:'host', port:'port' ,
        mode:"central"
      }
    }
@@ -79,7 +79,7 @@ var zlog = {
        appId:'app_id',
        apiKey:'api_key',
        adapter:require('zlog-adapter'), 
-       ip:'host', port:'port' ,
+       host:'host', port:'port' ,
        mode:"central",
        SKIP:{
          "/api/a":"CODE":{"<":304, ">":200},
@@ -101,7 +101,7 @@ var zlog = {
        appId:'app_id',
        apiKey:'api_key',
        adapter:require('zlog-adapter'), 
-       ip:'host', port:'port' ,
+       host:'host', port:'port' ,
        mode:"central",
        SKIP_CODE:450
      }
@@ -118,7 +118,7 @@ var zlog = {
        appId:'app_id',
        apiKey:'api_key',
        adapter:require('zlog-adapter'), 
-       ip:'host', port:'port' ,
+       host:'host', port:'port' ,
        mode:"central",
        TAGS:{
           "/api/a":"tag1",
@@ -161,7 +161,7 @@ var adapter = {
      adapter:{
        appId:'app_id',
        apiKey:'api_key',
-       adapter:require('zlog-adapter'), ip:'host', port:'port',
+       adapter:require('zlog-adapter'), host:'host', port:'port',
        mode : 'central'
      }
    }
@@ -178,7 +178,7 @@ var adapter = {
      adapter:{
        appId:'app_id',
        apiKey:'api_key',
-       adapter:require('zlog-adapter'), ip:'host', port:'port',
+       adapter:require('zlog-adapter'), host:'host', port:'port',
        mode : 'local', //|| leave mode 
      }
    }
