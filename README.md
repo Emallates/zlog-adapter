@@ -1,4 +1,6 @@
 # zlog-adapter
+
+[![Join the chat at https://gitter.im/Emallates/zlog-adapter](https://badges.gitter.im/Emallates/zlog-adapter.svg)](https://gitter.im/Emallates/zlog-adapter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 log http request, response, and get the logged messages
 
 [![Join the chat at https://gitter.im/Emallates/zlog-adapter](https://badges.gitter.im/Emallates/zlog-adapter.svg)](https://gitter.im/Emallates/zlog-adapter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
