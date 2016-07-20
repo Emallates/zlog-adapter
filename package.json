@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Emallates/zlog-adapter.git"
+    "url": "git+https://github.com/Emallates/zlogjs-adapter.git"
   },
   "keywords": [
     "zglog",
@@ -20,9 +20,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Emallates/zlog-adapter/issues"
+    "url": "https://github.com/Emallates/zlogjs-adapter/issues"
   },
-  "homepage": "https://github.com/Emallates/zlog-adapter#readme",
+  "homepage": "https://github.com/Emallates/zlogjs-adapter#readme",
   "devDependencies": {
     "mocha": "^2.4.5",
     "should": "^8.3.1",
