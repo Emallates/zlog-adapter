@@ -1,26 +1,26 @@
-# zlog-adapter
+# zlogjs-adapter
 
 
 log http request, response, and get the logged messages
 
-[![Join the chat at https://gitter.im/Emallates/zlog-adapter](https://badges.gitter.im/Emallates/zlog-adapter.svg)](https://gitter.im/Emallates/zlog-adapter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/Emallates/zlogjs-adapter](https://badges.gitter.im/Emallates/zlogjs-adapter.svg)](https://gitter.im/Emallates/zlogjs-adapter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Version][version-svg]][package-url]&nbsp;[![Build Status][travis-svg]][travis-url]</br>[![ISSUES][issues-url]][issues-url]&nbsp;[![FORKS][forks-url]][forks-url]&nbsp;[![STARS][stars-url]][stars-url]&nbsp;[![Downloads][downloads-image]][downloads-url]</br>[![License][license-image]][license-url]
 
-[version-svg]: https://img.shields.io/npm/v/zlog-adapter.svg?style=flat-square
-[package-url]: https://npmjs.org/package/zlog-adapter
-[travis-svg]: https://img.shields.io/travis/Emallates/zlog-adapter/master.svg?style=flat-square
-[travis-url]: https://api.travis-ci.org/Emallates/zlog-adapter.svg?branch=master
-[issues-url]:https://img.shields.io/github/issues/Emallates/zlog-adapter.svg?style=flat-square
-[forks-url]:https://img.shields.io/github/forks/Emallates/zlog-adapter.svg?style=flat-square
-[stars-url]:https://img.shields.io/github/stars/Emallates/zlog-adapter.svg?style=flat-square
-[downloads-image]: https://img.shields.io/npm/dm/zlog-adapter.svg?style=flat-square
-[downloads-url]: http://npm-stat.com/charts.html?package=zlog-adapter
+[version-svg]: https://img.shields.io/npm/v/zlogjs-adapter.svg?style=flat-square
+[package-url]: https://npmjs.org/package/zlogjs-adapter
+[travis-svg]: https://img.shields.io/travis/Emallates/zlogjs-adapter/master.svg?style=flat-square
+[travis-url]: https://api.travis-ci.org/Emallates/zlogjs-adapter.svg?branch=master
+[issues-url]:https://img.shields.io/github/issues/Emallates/zlogjs-adapter.svg?style=flat-square
+[forks-url]:https://img.shields.io/github/forks/Emallates/zlogjs-adapter.svg?style=flat-square
+[stars-url]:https://img.shields.io/github/stars/Emallates/zlogjs-adapter.svg?style=flat-square
+[downloads-image]: https://img.shields.io/npm/dm/zlogjs-adapter.svg?style=flat-square
+[downloads-url]: http://npm-stat.com/charts.html?package=zlogjs-adapter
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-[license-url]: https://raw.githubusercontent.com/Emallates/zlog-adapter/master/LICENSE
+[license-url]: https://raw.githubusercontent.com/Emallates/zlogjs-adapter/master/LICENSE
 
 ##DESCRIPTION
-zlog-adapter is just for experminetal purposes for [enoa-client](https://github.com/Emallates/enoa-client), you can log the http request, response and get the saved logged messages.<br/>
- `zlog-adapter` is build for [enoa-client](https://github.com/Emallates/enoa-client) just for experimental purposes.<br/>
+zlogjs-adapter is just for experminetal purposes for [enoa-client](https://github.com/Emallates/enoa-client), you can log the http request, response and get the saved logged messages.<br/>
+ `zlogjs-adapter` is build for [enoa-client](https://github.com/Emallates/enoa-client) just for experimental purposes.<br/>
 
 <!--NO_HTML-->
 Table of Contents
@@ -29,7 +29,7 @@ Table of Contents
 1. [Prerequisites](#prerequisites)
 1. [Installation](#installation)
 1. [Configuration](#configuration)
-	- [zlog-adapter configuration](#zlog-adapter)
+	- [zlogjs-adapter configuration](#zlogjs-adapter)
 1. [Overview](#overview)
 	- [Features](#features)
 	- [Methods](#methods)
@@ -45,16 +45,16 @@ Clients should be registered with the regarding service
 
 Install stable version from NPM:
 ```
-npm install zlog-adapter --save
+npm install zlogjs-adapter --save
 ```
 
 
 ## Configuration
 
-zlog-adapter can be used with enoa-client, for more information on how to use enoa-client in your App view the [enoa-client](https://github.com/Emallates/enoa-client).
+zlogjs-adapter can be used with enoa-client, for more information on how to use enoa-client in your App view the [enoa-client](https://github.com/Emallates/enoa-client).
 
 
-#### zlog-adapter configuration
+#### zlogjs-adapter configuration
 
 ##### Example
 
@@ -64,7 +64,7 @@ var zlog = {
      adapter:{
        appId:'app_id',
        apiKey:'api_key',
-       adapter:require('zlog-adapter'), 
+       adapter:require('zlogjs-adapter'), 
        host:'host', port:'port' ,
        mode:"central"
      }
@@ -80,7 +80,7 @@ var zlog = {
      adapter:{
        appId:'app_id',
        apiKey:'api_key',
-       adapter:require('zlog-adapter'), 
+       adapter:require('zlogjs-adapter'), 
        host:'host', port:'port' ,
        mode:"central",
        SKIP:{
@@ -102,7 +102,7 @@ var zlog = {
      adapter:{
        appId:'app_id',
        apiKey:'api_key',
-       adapter:require('zlog-adapter'), 
+       adapter:require('zlogjs-adapter'), 
        host:'host', port:'port' ,
        mode:"central",
        SKIP_CODE:450
@@ -119,7 +119,7 @@ var zlog = {
      adapter:{
        appId:'app_id',
        apiKey:'api_key',
-       adapter:require('zlog-adapter'), 
+       adapter:require('zlogjs-adapter'), 
        host:'host', port:'port' ,
        mode:"central",
        TAGS:{
@@ -163,7 +163,7 @@ var adapter = {
      adapter:{
        appId:'app_id',
        apiKey:'api_key',
-       adapter:require('zlog-adapter'), host:'host', port:'port',
+       adapter:require('zlogjs-adapter'), host:'host', port:'port',
        mode : 'central'
      }
    }
@@ -180,7 +180,7 @@ var adapter = {
      adapter:{
        appId:'app_id',
        apiKey:'api_key',
-       adapter:require('zlog-adapter'), host:'host', port:'port',
+       adapter:require('zlogjs-adapter'), host:'host', port:'port',
        mode : 'local', //|| leave mode 
      }
    }
@@ -372,7 +372,7 @@ client.adapter.stat('code',callback);
 
 
 ## Issues or Suggestions
-As zlog-adapter is just an experimantal adapter for [enoa-client](https://github.com/Emallates/enoa-client), anybody who can build or contribute is welcome.
+As zlogjs-adapter is just an experimantal adapter for [enoa-client](https://github.com/Emallates/enoa-client), anybody who can build or contribute is welcome.
 
 
 ## License
