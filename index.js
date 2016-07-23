@@ -52,7 +52,7 @@ adapter.prototype.delete = function(obj, callback){
 	obj.adopId = 1122; return callback(null, obj); 
 };
 adapter.prototype.extend = function(optional){
-	var ext = new extend(this, optional);
+	var ext = new extend(this, optional, conf);
 	for(key in optional) ext[key] = (typeof optional[key] == 'function') ? optional[key] : undefined;
     ext.find = find;
     ext.exec = util.exec;
