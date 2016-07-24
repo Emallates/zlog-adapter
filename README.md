@@ -128,6 +128,7 @@ var zlog = {
           "/api/c":["tag1:tvalue","tag2:tvalue"],
           "/api/d":["tag1","tag2"],
           "/api/e":{"tag1":"tvalue","tag2":"tvalue"},
+          "splitter":":"
        }
      }
    }
