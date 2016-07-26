@@ -381,10 +381,7 @@ client.adapter.stat('code',callback);
      "function":{type:"Function",value:function(a, b){ var result = Object.prototype.toString.call(a) == '[object String]' ? '' : Object.prototype.toString.call(a) == '[object Array]' ? [] : Object.prototype.toString.call(a) == '[object Object]' ? {} : false; if(Object.prototype.toString.call(a) == '[object String]' && Object.prototype.toString.call(b) == '[object String]' ) result = a+b; if(Object.prototype.toString.call(a) == '[object Array]' && Object.prototype.toString.call(b) == '[object Array]' ){ for(i in a) result.push(a[i]); for(i in b) result.push(b[i]); if(Object.prototype.toString.call(a) == '[object Object]' && Object.prototype.toString.call(b) == '[object Object]' ){ for(key in a) result[key] = a[key]; for(key in b) result[key] = b[key]; }}}}
   }
  }  
- eclient.adapter.rules({ftype:'set',type:'type', rule:operator}, function(err, data){
-      if(err) return res.send(err);
-      return res.send(data);
-  });
+ eclient.adapter.rules({ftype:'set',type:'operator', rule:operator}, Callback);
 ```
 
 ##Set Rules OR Inject(Keyword)
@@ -396,10 +393,7 @@ client.adapter.stat('code',callback);
      "function":{type:"Function",value:function(a, b){ var result = Object.prototype.toString.call(a) == '[object String]' ? '' : Object.prototype.toString.call(a) == '[object Array]' ? [] : Object.prototype.toString.call(a) == '[object Object]' ? {} : false; if(Object.prototype.toString.call(a) == '[object String]' && Object.prototype.toString.call(b) == '[object String]' ) result = a+b; if(Object.prototype.toString.call(a) == '[object Array]' && Object.prototype.toString.call(b) == '[object Array]' ){ for(i in a) result.push(a[i]); for(i in b) result.push(b[i]); if(Object.prototype.toString.call(a) == '[object Object]' && Object.prototype.toString.call(b) == '[object Object]' ){ for(key in a) result[key] = a[key]; for(key in b) result[key] = b[key]; }}}}
   }
  }  
- eclient.adapter.rules({ftype:'set',type:'type', rule:keyword}, function(err, data){
-      if(err) return res.send(err);
-      return res.send(data);
-  });
+ eclient.adapter.rules({ftype:'set',type:'keyword', rule:keyword}, Callback);
 ```
 
 ##Set Rules OR Inject(Rule)
@@ -427,10 +421,26 @@ client.adapter.stat('code',callback);
          "c1":{"type":"description", "value":"if the fact father or mother is king, and queen respectively then you are a prince, and if grand father is great king , then you belong to royal family"}
     }
 } 
- eclient.adapter.rules({ftype:'set',type:'type', rule:Rule}, function(err, data){
-      if(err) return res.send(err);
-      return res.send(data);
-  });
+ eclient.adapter.rules({ftype:'set',type:'rule', rule:Rule}, Callback);
+```
+##Get Keyword
+```javascript
+ //get saved customized operators  
+ eclient.adapter.rules({ftype:'get',type:'keyword'}, Callback);
+ eclient.adapter.rules({ftype:'get',type:'keyword', key:'title || identifier'}, Callback);
+```
+
+##Get Operator
+```javascript
+ //get saved standard operators  
+ eclient.adapter.rules({ftype:'get',type:'operator', key:'title || identifier'}, Callback);
+ eclient.adapter.rules({ftype:'get',type:'operator'}, Callback);
+```
+##Get Kb || a single rule
+```javascript
+   
+ eclient.adapter.rules({ftype:'get',type:'knwoledgebase', key:'title || identifier'}, Callback);
+ eclient.adapter.rules({ftype:'get',type:'knowledgebase'}, Callback);
 ```
 
 
