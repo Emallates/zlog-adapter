@@ -144,6 +144,7 @@ var client = require('enoa-client')(zlog);
 3. [Get Terms]()
 4. [Get Stats]()
 5. [Get History]()
+6. [Inject Rules]()
 
 #### Methods
 
@@ -370,6 +371,68 @@ client.adapter.find().select('code').type('fstat').exec(callback);
 //OR
 client.adapter.stat('code',callback);
 ```
+####Rules
+##Set Rules OR Inject(Operator)
+```javascript
+ var operator = {
+ "op":{
+     "title":".", 
+     "description":"This operator concatenates two strings arrays or objects",
+     "function":{type:"Function",value:function(a, b){ var result = Object.prototype.toString.call(a) == '[object String]' ? '' : Object.prototype.toString.call(a) == '[object Array]' ? [] : Object.prototype.toString.call(a) == '[object Object]' ? {} : false; if(Object.prototype.toString.call(a) == '[object String]' && Object.prototype.toString.call(b) == '[object String]' ) result = a+b; if(Object.prototype.toString.call(a) == '[object Array]' && Object.prototype.toString.call(b) == '[object Array]' ){ for(i in a) result.push(a[i]); for(i in b) result.push(b[i]); if(Object.prototype.toString.call(a) == '[object Object]' && Object.prototype.toString.call(b) == '[object Object]' ){ for(key in a) result[key] = a[key]; for(key in b) result[key] = b[key]; }}}}
+  }
+ }  
+ eclient.adapter.rules({ftype:'set',type:'type', rule:operator}, function(err, data){
+      if(err) return res.send(err);
+      return res.send(data);
+  });
+```
+
+##Set Rules OR Inject(Keyword)
+```javascript
+ var keyword = {
+ "kw":{
+     "title":".", 
+     "description":"This operator concatenates two strings arrays or objects",
+     "function":{type:"Function",value:function(a, b){ var result = Object.prototype.toString.call(a) == '[object String]' ? '' : Object.prototype.toString.call(a) == '[object Array]' ? [] : Object.prototype.toString.call(a) == '[object Object]' ? {} : false; if(Object.prototype.toString.call(a) == '[object String]' && Object.prototype.toString.call(b) == '[object String]' ) result = a+b; if(Object.prototype.toString.call(a) == '[object Array]' && Object.prototype.toString.call(b) == '[object Array]' ){ for(i in a) result.push(a[i]); for(i in b) result.push(b[i]); if(Object.prototype.toString.call(a) == '[object Object]' && Object.prototype.toString.call(b) == '[object Object]' ){ for(key in a) result[key] = a[key]; for(key in b) result[key] = b[key]; }}}}
+  }
+ }  
+ eclient.adapter.rules({ftype:'set',type:'type', rule:keyword}, function(err, data){
+      if(err) return res.send(err);
+      return res.send(data);
+  });
+```
+
+##Set Rules OR Inject(Rule)
+```javascript
+ var Rule = {       
+    "rule":{
+      "t1" :{"type":"title", "value":"crown-kb-function"},
+         "d1" : {"type":"operations", "value":["==","!="]},
+         "e1":[{"type":"target", "value":"king", "factname":"father","actref":"a1", "opref":0},{"type":"target", "value":"minister", "factname":"mother","actref":"a3","opref":1},{"type":"target", "value":"great king", "factname":"grandfather","actref":"a2","opref":0}],
+         "a1":{
+            "type":"action",
+            "value":"isPrince",
+            "actref":"a2"
+          },
+         "a2":{
+           "type":"action",
+           "value": {"type":"Function","value":function (){  console.log('confratulations, you belong to a Royal famliy'); }},
+           "parent":"action",
+           "params":"grandfather"
+         },
+         "a3":{
+            "type":"action",
+            "value":"isNotPrince"
+          },
+         "c1":{"type":"description", "value":"if the fact father or mother is king, and queen respectively then you are a prince, and if grand father is great king , then you belong to royal family"}
+    }
+} 
+ eclient.adapter.rules({ftype:'set',type:'type', rule:Rule}, function(err, data){
+      if(err) return res.send(err);
+      return res.send(data);
+  });
+```
+
 
 
 ## Issues or Suggestions

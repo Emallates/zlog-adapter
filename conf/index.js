@@ -3,7 +3,7 @@ module.exports = obj = {
 		EXT:require('../lib/extend'), UTIL:require('../lib/util'),QUERY:require('../lib/query')
 	},
 	BASE : {
-		input:'/input', output:'/Search',rbase:'/gtV1.0'
+		input:'/input', output:'/Search',rbase:'/gtV1.0', radd : '/add', rget : '/get'
 	},
 	ERRORS : {
 		//[err][relation][subject][object type][this]
