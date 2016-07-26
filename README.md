@@ -372,7 +372,7 @@ client.adapter.find().select('code').type('fstat').exec(callback);
 client.adapter.stat('code',callback);
 ```
 ####Rules
-##Set Rules OR Inject(Operator)
+#####Set Rules OR Inject(Operator)
 ```javascript
  var operator = {
  "op":{
@@ -384,7 +384,7 @@ client.adapter.stat('code',callback);
  eclient.adapter.rules({ftype:'set',type:'operator', rule:operator}, Callback);
 ```
 
-##Set Rules OR Inject(Keyword)
+#####Set Rules OR Inject(Keyword)
 ```javascript
  var keyword = {
  "kw":{
@@ -396,7 +396,7 @@ client.adapter.stat('code',callback);
  eclient.adapter.rules({ftype:'set',type:'keyword', rule:keyword}, Callback);
 ```
 
-##Set Rules OR Inject(Rule)
+#####Set Rules OR Inject(Rule)
 ```javascript
  var Rule = {       
     "rule":{
@@ -423,20 +423,20 @@ client.adapter.stat('code',callback);
 } 
  eclient.adapter.rules({ftype:'set',type:'rule', rule:Rule}, Callback);
 ```
-##Get Keyword
+#####Get Keyword
 ```javascript
  //get saved customized operators  
  eclient.adapter.rules({ftype:'get',type:'keyword'}, Callback);
  eclient.adapter.rules({ftype:'get',type:'keyword', key:'title || identifier'}, Callback);
 ```
 
-##Get Operator
+#####Get Operator
 ```javascript
  //get saved standard operators  
  eclient.adapter.rules({ftype:'get',type:'operator', key:'title || identifier'}, Callback);
  eclient.adapter.rules({ftype:'get',type:'operator'}, Callback);
 ```
-##Get Kb || a single rule
+#####Get Kb || a single rule
 ```javascript
    
  eclient.adapter.rules({ftype:'get',type:'knwoledgebase', key:'title || identifier'}, Callback);
