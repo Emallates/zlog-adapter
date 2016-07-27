@@ -374,54 +374,78 @@ client.adapter.stat('code',callback);
 ####Rules
 #####Set Rules OR Inject(Operator)
 ```javascript
- var operator = {
- "op":{
-     "title":".", 
-     "description":"This operator concatenates two strings arrays or objects",
-     "function":{type:"Function",value:function(a, b){ var result = Object.prototype.toString.call(a) == '[object String]' ? '' : Object.prototype.toString.call(a) == '[object Array]' ? [] : Object.prototype.toString.call(a) == '[object Object]' ? {} : false; if(Object.prototype.toString.call(a) == '[object String]' && Object.prototype.toString.call(b) == '[object String]' ) result = a+b; if(Object.prototype.toString.call(a) == '[object Array]' && Object.prototype.toString.call(b) == '[object Array]' ){ for(i in a) result.push(a[i]); for(i in b) result.push(b[i]); if(Object.prototype.toString.call(a) == '[object Object]' && Object.prototype.toString.call(b) == '[object Object]' ){ for(key in a) result[key] = a[key]; for(key in b) result[key] = b[key]; }}}}
-  }
- }  
+var operator = {
+   "title":".", 
+   "description":"This operator concatenates two strings arrays or objects",
+   "function":{type:"Function",value:function(a, b){ var result = Object.prototype.toString.call(a) == '[object String]' ? '' : Object.prototype.toString.call(a) == '[object Array]' ? [] : Object.prototype.toString.call(a) == '[object Object]' ? {} : false; if(Object.prototype.toString.call(a) == '[object String]' && Object.prototype.toString.call(b) == '[object String]' ) result = a+b; if(Object.prototype.toString.call(a) == '[object Array]' && Object.prototype.toString.call(b) == '[object Array]' ){ for(i in a) result.push(a[i]); for(i in b) result.push(b[i]); if(Object.prototype.toString.call(a) == '[object Object]' && Object.prototype.toString.call(b) == '[object Object]' ){ for(key in a) result[key] = a[key]; for(key in b) result[key] = b[key]; }}}}
+};
  eclient.adapter.rules({ftype:'set',type:'operator', rule:operator}, Callback);
 ```
 
 #####Set Rules OR Inject(Keyword)
 ```javascript
- var keyword = {
- "kw":{
-     "title":".", 
-     "description":"This operator concatenates two strings arrays or objects",
-     "function":{type:"Function",value:function(a, b){ var result = Object.prototype.toString.call(a) == '[object String]' ? '' : Object.prototype.toString.call(a) == '[object Array]' ? [] : Object.prototype.toString.call(a) == '[object Object]' ? {} : false; if(Object.prototype.toString.call(a) == '[object String]' && Object.prototype.toString.call(b) == '[object String]' ) result = a+b; if(Object.prototype.toString.call(a) == '[object Array]' && Object.prototype.toString.call(b) == '[object Array]' ){ for(i in a) result.push(a[i]); for(i in b) result.push(b[i]); if(Object.prototype.toString.call(a) == '[object Object]' && Object.prototype.toString.call(b) == '[object Object]' ){ for(key in a) result[key] = a[key]; for(key in b) result[key] = b[key]; }}}}
-  }
- }  
+var keyword = {
+     "title":"AA", 
+     "description":"This key word means inside the rule executors which action will be executed it can contain the refferance of action or direct action itself as a function",
+     "function":{"type":"Function","value":function (){  return "A"; }}
+};
  eclient.adapter.rules({ftype:'set',type:'keyword', rule:keyword}, Callback);
 ```
 
-#####Set Rules OR Inject(Rule)
+#####Set Rules OR Inject(Object)
 ```javascript
- var Rule = {       
-    "rule":{
-      "t1" :{"type":"title", "value":"crown-kb-function"},
+var rule = {
+      "t1" :{"type":"title", "value":"isPrince"},
          "d1" : {"type":"operations", "value":["==","!="]},
          "e1":[{"type":"target", "value":"king", "factname":"father","actref":"a1", "opref":0},{"type":"target", "value":"minister", "factname":"mother","actref":"a3","opref":1},{"type":"target", "value":"great king", "factname":"grandfather","actref":"a2","opref":0}],
-         "a1":{
+          "a1":{
             "type":"action",
-            "value":"isPrince",
+            "value":{"type":"Function","value":function (){  console.log('isPrince'); }},
             "actref":"a2"
           },
          "a2":{
            "type":"action",
            "value": {"type":"Function","value":function (){  console.log('confratulations, you belong to a Royal famliy'); }},
-           "parent":"action",
            "params":"grandfather"
          },
          "a3":{
             "type":"action",
-            "value":"isNotPrince"
+            "value":{"type":"Function","value":function (){  console.log("isNotPrince");  }}
           },
          "c1":{"type":"description", "value":"if the fact father or mother is king, and queen respectively then you are a prince, and if grand father is great king , then you belong to royal family"}
-    }
-} 
- eclient.adapter.rules({ftype:'set',type:'rule', rule:Rule}, Callback);
+};
+ eclient.adapter.rules({ftype:'set',type:'rule', rule:rule}, Callback);
+ //OR
+ eclient.adapter.rules({ftype:'set',type:'knowledgebase', rule:rule}, Callback);
+```
+
+#####Set Rules OR Inject(Array)
+```javascript
+var arr = [
+        {
+       "t1" :{"type":"title", "value":"testT4"},
+           "d1" : {"type":"operations", "value":"=="},
+           "e1":[{"type":"target", "value":"parent", "factname":"father", "actref":"a1"},{"type":"target", "value":"parent", "factname":"mother", "actref":"a1"},{"type":"target", "value":"parent", "factname":"grantfather", "actref":"a2"}],
+           "a1":{"type":"action", "value":"king"},
+           "a2":{"type":"action", "value":{type:"Function", value:function(){ console.log("Your Father!");}}},
+           "a3":{"type":"action", "value":{type:"Function", value:function(){ console.log("King");}}},
+           "c1":{"type":"description", "value":"if the fact equal value father it will return king || true"}
+    },{
+       "t1" :{"type":"title", "value":"testT5"},
+           "d1" : {"type":"operations", "value":">"},
+           "e1":{"type":"target", "value":6547852.0265, "factname":"sales"},
+           "a1":{"type":"action", "value":"return"},
+           "c1":{"type":"description", "value":"if the fact greater then value sales it will return true"}
+    },{
+       "t1":{"type":"title", "value":"testT6"},
+           "d1":{"type":"operations", "value":"=="},
+           "e1":{"type":"target", "value":"this", "factname":"father"},
+           "a1":{"type":"action", "value":"return"},
+           "c1":{"type":"description", "value":"if the fact is equal to father then it will return true"}
+     }
+];
+ 
+ eclient.adapter.rules({ftype:'set',type:'knowledgebase', rule:arr}, Callback);
 ```
 #####Get Keyword
 ```javascript
