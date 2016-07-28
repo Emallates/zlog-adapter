@@ -400,7 +400,8 @@ var rule = {
          "e1":[{"type":"target", "value":"king", "factname":"father","actref":"a1", "opref":0},{"type":"target", "value":"minister", "factname":"mother","actref":"a3","opref":1},{"type":"target", "value":"great king", "factname":"grandfather","actref":"a2","opref":0}],
           "a1":{
             "type":"action",
-            "value":{"type":"Function","value":function (){  console.log('isPrince'); }},
+            "value":{"type":"Function","value":function (msg){  console.log(msg+'isPrince'); }},
+            "params":"fact"
             "actref":"a2"
           },
          "a2":{
