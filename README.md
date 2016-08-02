@@ -265,6 +265,36 @@ client.adapter.find().type('cstat').key('level').value('6').order('term').exec(c
 ```javascript
 client.adapter.total(callback);
 ```
+#### Syestem responses by ERROR, EXCEPTION, and SUCCESS
+
+```javascript
+client.adapter.status(callback);
+```
+#### Locations
+
+```javascript
+client.adapter.locations(callback);
+```
+#### Locations
+
+```javascript
+client.adapter.locations(callback);
+```
+#### Callers IP's
+
+```javascript
+client.adapter.callers(callback);
+```
+#### Requests Classified by methods
+
+```javascript
+client.adapter.requests(callback);
+```
+#### Browsers
+
+```javascript
+client.adapter.browsers(callback);
+```
 #### Find
 
 ```javascript
