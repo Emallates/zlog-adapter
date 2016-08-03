@@ -275,11 +275,6 @@ client.adapter.status(callback);
 ```javascript
 client.adapter.locations(callback);
 ```
-#### Locations
-
-```javascript
-client.adapter.locations(callback);
-```
 #### Callers IP's
 
 ```javascript
