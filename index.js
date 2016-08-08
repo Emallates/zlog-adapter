@@ -1,10 +1,9 @@
-var _ = require('type-util');
 var conf = require('./conf');
 var extend = conf.LIB.EXT; 
 var util = conf.LIB.UTIL;
 var query = conf.LIB.QUERY;
 var ibase = conf.BASE.input;
-var obase = conf.BASE.output;
+// var obase = conf.BASE.output;
 var rbase = conf.BASE.rbase;
 
 module.exports = adapter;
@@ -18,7 +17,7 @@ function adapter(context, opts){
 		this.host = util.getHosts(opts);
 		this.port = opts.port || 80;
 		this.ibase = ibase;
-		this.obase = obase;
+		// this.obase = obase;
 		this.rbase = rbase;
 		this.debug = opts.debug;
 	}
@@ -53,9 +52,9 @@ adapter.prototype.delete = function(obj, callback){
 };
 adapter.prototype.extend = function(optional){
 	var ext = new extend(this, optional, conf);
-	for(key in optional) ext[key] = (typeof optional[key] == 'function') ? optional[key] : undefined;
+	for(key in optional) ext[key] = (util.isFunction(optional[key])) ? optional[key] : undefined;
     ext.find = find;
-    ext.exec = util.exec;
+    // ext.exec = util.exec;
     return ext;  
 };
 
