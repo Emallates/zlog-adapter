@@ -22,7 +22,7 @@ function adapter(context, opts){
 		this.debug = opts.debug;
 	}
 	if(opts.mode == 'local' || opts.mode == undefined){
-	    console.log('Logs will be generated to file logs, because log mode is being set to local');
+	    // console.log('Logs will be generated to file logs, because log mode is being set to local');
 		this.context = context;
 		this.configs = opts;
 		this.host = util.getHosts(opts);

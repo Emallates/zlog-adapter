@@ -26,11 +26,10 @@
   "devDependencies": {
     "mocha": "^2.4.5",
     "should": "^8.3.1",
-    "type-util": "*"
+    "extend":"*"
   },
   "dependencies": {
     "enoa-client": "*",
-    "on-headers": "^1.0.1",
-    "type-util": "*"
+    "on-headers": "^1.0.1"
   }
 }
