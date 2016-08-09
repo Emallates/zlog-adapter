@@ -260,6 +260,18 @@ client.adapter.subClassStat({key:'level', value:'6', order:'term'},callback);
 client.adapter.find().type('cstat').key('level').value('6').order('term').exec(callback)
 ```
 
+#### Operations History
+```
+clien.adapter.operationsHitsory(interval,callback);
+
+```
+
+#### System Status per method 
+```
+client.adapter.systemStatusPerMethod(callback);
+```
+
+
 #### Total
 
 ```javascript
@@ -280,10 +292,10 @@ client.adapter.locations(callback);
 ```javascript
 client.adapter.callers(callback);
 ```
-#### Requests Classified by methods
+#### Operations by methods
 
 ```javascript
-client.adapter.requests(callback);
+client.adapter.operations(time, callback);
 ```
 #### Browsers
 

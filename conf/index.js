@@ -14,7 +14,7 @@ module.exports = obj = {
 		, classify:"/fieldfacet"
 		, history:"/history"
 		, cfstat:"/fieldfacetstat"
-		, fieldSpecificHistory:"/fieldspecifichistory"
+		, fhistory:"/fieldspecifichistory"
 		, single:"/messages/"
 	},
 	ERRORS : {
