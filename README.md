@@ -266,13 +266,6 @@ clien.adapter.operationsHitsory(interval,callback);
 
 ```
 
-#### System Status per method 
-```javascript
-client.adapter.systemStatusPerMethod(callback);
-```
-
-
-
 #### System Status per Operation
 ```javascript
   client.adapter.systemStatusPerOperation(callback);
