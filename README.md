@@ -261,14 +261,21 @@ client.adapter.find().type('cstat').key('level').value('6').order('term').exec(c
 ```
 
 #### Operations History
-```
+```javascript
 clien.adapter.operationsHitsory(interval,callback);
 
 ```
 
 #### System Status per method 
-```
+```javascript
 client.adapter.systemStatusPerMethod(callback);
+```
+
+
+
+#### System Status per Operation
+```javascript
+  client.adapter.systemStatusPerOperation(callback);
 ```
 
 
