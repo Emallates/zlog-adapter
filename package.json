@@ -1,6 +1,6 @@
 {
   "name": "zlogjs-adapter",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "log http request, response, and get the logged messages",
   "main": "index.js",
   "scripts": {
