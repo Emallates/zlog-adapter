@@ -206,9 +206,46 @@ client.adapter.messages(10, 10, callback);
 
 ```javascript
 //ref is always given inside messages body along with id
-client.adapter.getMessageById({id:'id',ref:'ref'}, callback);
+client.adapter.getMessageById({id:'id'}, callback);
 
 ```
+#### Operations History
+```javascript
+clien.adapter.operationsHitsory(interval,callback);
+
+```
+
+#### System Status per Operation
+```javascript
+  client.adapter.systemStatusPerOperation(callback);
+```
+
+#### Syestem responses by ERROR, EXCEPTION, and SUCCESS
+
+```javascript
+client.adapter.status(callback);
+```
+#### Locations
+
+```javascript
+client.adapter.locations(callback);
+```
+#### Callers IP's
+
+```javascript
+client.adapter.callers(callback);
+```
+#### Operations by methods
+
+```javascript
+client.adapter.operations(time, callback);
+```
+#### Browsers
+
+```javascript
+client.adapter.browsers(callback);
+```
+
 
 #### Successes/Key
 ```javascript
@@ -310,48 +347,16 @@ client.adapter.subClassStat({key:'level', value:'6', order:'term'},callback);
 client.adapter.find().type('cstat').key('level').value('6').order('term').exec(callback)
 ```
 
-#### Operations History
-```javascript
-clien.adapter.operationsHitsory(interval,callback);
-
-```
-
-#### System Status per Operation
-```javascript
-  client.adapter.systemStatusPerOperation(callback);
-```
-
 
 #### Total
 
 ```javascript
-client.adapter.total(callback);
+// Get total of Events
+client.adapter.total(null,callback);
+// Get total of key
+client.adapter.total(key,callback);
 ```
-#### Syestem responses by ERROR, EXCEPTION, and SUCCESS
 
-```javascript
-client.adapter.status(callback);
-```
-#### Locations
-
-```javascript
-client.adapter.locations(callback);
-```
-#### Callers IP's
-
-```javascript
-client.adapter.callers(callback);
-```
-#### Operations by methods
-
-```javascript
-client.adapter.operations(time, callback);
-```
-#### Browsers
-
-```javascript
-client.adapter.browsers(callback);
-```
 #### Find
 
 ```javascript
