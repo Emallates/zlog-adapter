@@ -297,6 +297,12 @@ client.adapter.uniqueCalls({http_client_ip:"ipexample"}, callback);
 client.adapter.keyCalls({http_client_ip:"ipexample"}, callback);  
 ```
 
+#### Key Calls History by fields
+```javascript
+//overall calls from the specific ip
+client.adapter.keyCallsHistoryV1(field, keyValueCriteria, callback);  
+```
+
 #### Terms
 
 ```javascript

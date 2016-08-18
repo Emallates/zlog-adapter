@@ -16,6 +16,8 @@ module.exports = obj = {
 		, cfstat:"/fieldfacetstat"
 		, fhistory:"/fieldspecifichistory"
 		, single:"/messages/"
+		, performance:"/performance"
+		, performancehistory: "/performancehistory"
 	},
 	ERRORS : {
 		//[err][relation][subject][object type][this]
