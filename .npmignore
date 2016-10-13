@@ -29,4 +29,12 @@ node_modules
 # Test Manual
 ctest.js
 opt.json
+#Not Finalized Files
+CONTRIBUTING.md
+FAQ.md
+zlogjs.opts
+Makefile
+test
+test_stub
+libOld
 

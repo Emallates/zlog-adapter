@@ -2,7 +2,7 @@
   "name": "zlogjs-adapter",
   "version": "0.2.12",
   "description": "log http request, response, and get the logged messages",
-  "main": "index.js",
+  "main": "./lib/adapter.js",
   "scripts": {
     "test": "mocha test"
   },
@@ -32,6 +32,8 @@
   "dependencies": {
     "enoa-client": "*",
     "on-headers": "^1.0.1",
-    "extend":"*"
+    "extend":"*",
+    "zlogjs-http-logger":"*",
+    "zlogjs-express-logger":"*"
   }
 }
