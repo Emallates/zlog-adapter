@@ -64,9 +64,10 @@ var zlog = {
      adapter:{
        appId:'app_id',
        apiKey:'api_key',
-       adapter:require('zlogjs-adapter'), 
+       adapter:require('zlogjs-adapter'),
+       plugin:'zlogjs-http-logger', 
        host:'host', port:'port' ,
-       mode:"central"
+       mode:"remote"
      }
    }
 };
@@ -82,7 +83,7 @@ var zlog = {
        apiKey:'api_key',
        adapter:require('zlogjs-adapter'), 
        host:'host', port:'port' ,
-       mode:"central",
+       mode:"remote",
        SKIP:{
          "/api/a":"CODE":{"<":304, ">":200},
          "/api/b":200
@@ -152,7 +153,45 @@ var client = require('enoa-client')(zlog);
 
 ```javascript
 //express
-express_app.use(client.adapter.logger());
+var zlog = { 
+   collections:{
+     adapter:{
+       appId:'app_id',
+       apiKey:'api_key',
+       adapter:require('zlogjs-adapter'),
+       plugin:'zlogjs-express-logger', 
+       host:'host', port:'port' ,
+       mode:"remote"
+     }
+   }
+};
+var client = require('enoa-client')(zlog);
+express_app.use(client.adapter.logger);
+//normal use
+client.adapter.log(//parameters)
+```
+```javascript
+//http
+var zlog = { 
+   collections:{
+     adapter:{
+       appId:'app_id',
+       apiKey:'api_key',
+       adapter:require('zlogjs-adapter'),
+       plugin:'zlogjs-http-logger', 
+       host:'host', port:'port' ,
+       mode:"remote"
+     }
+   }
+};
+var client = require('enoa-client')(zlog);
+http.createServer(function (req, res) {
+  /*HANDLERS BASED ON ROUTES*/
+  req._start = new Date;
+  //Handlers
+  /*HTTP-SERVER-LOGGER*/
+  client.zlog.logger(req, res, res.body, function(err, data){ /*console.log(err, data);*/ });
+}).listen(PORT, function(){});
 //normal use
 client.adapter.log(//parameters)
 ```
