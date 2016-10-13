@@ -37,4 +37,5 @@ Makefile
 test
 test_stub
 libOld
+testPROG
 
