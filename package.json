@@ -32,8 +32,6 @@
   "dependencies": {
     "enoa-client": "*",
     "on-headers": "^1.0.1",
-    "extend":"*",
-    "zlogjs-http-logger":"*",
-    "zlogjs-express-logger":"*"
+    "extend":"*" 
   }
 }
