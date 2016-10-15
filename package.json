@@ -1,6 +1,6 @@
 {
   "name": "zlogjs-adapter",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "description": "log http request, response, and get the logged messages",
   "main": "./lib/adapter.js",
   "scripts": {
@@ -32,6 +32,7 @@
   "dependencies": {
     "enoa-client": "*",
     "on-headers": "^1.0.1",
-    "extend":"*" 
+    "extend":"*" ,
+    "async-waterfall":"*"
   }
 }
